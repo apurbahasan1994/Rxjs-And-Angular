@@ -1,0 +1,16 @@
+<div>
+  <form style="display: flex;flex-direction: column;gap:20px">
+    <ng-content select="h3"></ng-content>
+    <div style="display: flex;flex-direction: column; gap:10px">
+      <label for="email">Email</label>
+      <input name="email" id="email">
+    </div>
+    <div style="display: flex;flex-direction: column; gap:10px">
+      <label for="pass">Password</label>
+      <input name="pass" id="pass">
+    </div>
+    <ng-content select="app-auth-remember"></ng-content>
+    <ng-content select="button" ></ng-content>
+  </form>
+
+</div>

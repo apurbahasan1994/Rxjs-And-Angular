@@ -1,0 +1,28 @@
+
+    .tooltip-container{
+      position: relative;
+    }
+    .tooltip{
+      display: inline-block;
+      margin: 50px 20px;
+      width: 180px;
+      height: 50px;
+      border: 1px solid gray;
+      border-radius: 5px;
+      line-height: 50px;
+      text-align: center;
+      display: none;
+    }
+   .tooltip--active {
+      position: absolute;
+      max-width: 150px;
+      font-size: 14px;
+      top:0px;
+      text-align: center;
+      color: #f8f8f2;
+      padding: 3px 8px;
+      background: #282a36;
+      border-radius: 4px;
+      z-index: 1000;
+      display: block;
+    }

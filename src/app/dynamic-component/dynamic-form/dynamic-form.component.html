@@ -1,0 +1,15 @@
+<div style="border:1px solid black ;padding: 24px;">
+  <form #form="ngForm" (submit)="onSubmit()" style="display: flex;flex-direction: column;gap:20px">
+    <h3>{{title}}</h3>
+    <div style="display: flex;flex-direction: column; gap:10px">
+      <label for="email">Email</label>
+      <input name="email" id="email" [(ngModel)]="email">
+    </div>
+    <div style="display: flex;flex-direction: column; gap:10px">
+      <label for="pass">Password</label>
+      <input name="pass" id="pass" [(ngModel)]="pass">
+    </div>
+    <button>{{title}}</button>
+  </form>
+
+</div>

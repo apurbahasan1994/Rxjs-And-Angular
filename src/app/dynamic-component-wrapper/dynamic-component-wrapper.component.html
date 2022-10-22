@@ -1,0 +1,25 @@
+<div style="display: flex;flex-direction: column;gap:20px;
+justify-content:center;align-items:center;height:100vh ;">
+ <div style="display:flex ;justify-content:space-between;gap:20px ;"> <button (click)="destroy()" style="padding: 10px;">Destroy dynamic component</button>
+  <button (click)="moveConponent()" style="padding: 10px;">Move dynamic component</button></div>
+  <div #entry>
+
+  </div>
+
+  <h2>Dynamic ng-Template rendering with ViewContainerRef</h2>
+
+  <div #dynamicViewContainer>
+  </div>
+  <ng-template #template let-name let-location="location">
+    {{name}}:{{location}}
+  </ng-template>
+  <h2>Dynamic ng-Template rendering with ngTemplateOutlet</h2>
+  <ng-container [ngTemplateOutlet]="template2"
+  [ngTemplateOutletContext]="ctx">
+  </ng-container>
+  <ng-template #template2 let-name let-location="location" >
+  {{name}}:{{location}}
+  </ng-template>
+</div>
+
+
