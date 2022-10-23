@@ -1,0 +1,14 @@
+<div style="display:flex;height:100vh;justify-content:center;align-items: center;">
+  <div class="stock-inventory">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" style="max-width:600px">
+      <app-stock-branch [parent]="form" ></app-stock-branch>
+      <app-stock-selector (onStockAdd)="addStock($event)" [parent]="form" [products]="products"></app-stock-selector>
+      <app-stock-products [parent]="form" (removed)="removed($event)"></app-stock-products>
+      <div class="stock-inventory__price">
+        Total :{{total|currency:'USD':true}}
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+</div>
