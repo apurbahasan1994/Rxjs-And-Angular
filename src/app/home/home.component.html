@@ -1,15 +1,1 @@
-<div style="display:flex;height: 100vh;">
-  <div style="flex:40">
-   <div style="max-height: 400px;;border: 1px solid black;">
-    <ul>
-      <li><a [routerLink]="['/view-encapsulation']" routerLinkActive="router-link-active" >View Encapsulation</a></li>
-      <li><a [routerLink]="['/dynamic-componenets']" routerLinkActive="router-link-active" >Dynamic Componenets</a></li>
-      <li><a [routerLink]="['/custom-directives']" routerLinkActive="router-link-active" >Custom Directives</a></li>
-      <li><a [routerLink]="['/custom-pipes']" routerLinkActive="router-link-active" >Custom Pipes</a></li>
-    </ul>
-   </div>
-  </div>
-  <div style="flex:60">
-
-  </div>
-</div>
+<app-layout [routes]="routes"  [label]="'Angular Depp Dive'"></app-layout>

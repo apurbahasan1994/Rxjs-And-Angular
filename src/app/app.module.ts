@@ -9,7 +9,11 @@ import { AuthRememberComponent } from './auth-remember/auth-remember.component';
 import { DynamicFormComponent } from './dynamic-component/dynamic-form/dynamic-form.component';
 import { DynamicComponentWrapperComponent } from './dynamic-component-wrapper/dynamic-component-wrapper.component';
 import { HomeComponent } from './home/home.component';
-
+import { RoutingOneComponent } from './advancedd-routing/routing-one/routing-one.component';
+import { API_TOKEN, USER_TOKEN } from './dependency/token';
+import { FoodService } from './dependency/food.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from './shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,17 +21,39 @@ import { HomeComponent } from './home/home.component';
     AuthRememberComponent,
     DynamicFormComponent,
     DynamicComponentWrapperComponent,
-    HomeComponent
+    HomeComponent,
+    RoutingOneComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    SharedModule
   ],
-  providers: [],
+
   bootstrap: [AppComponent],
-  entryComponents: [DynamicFormComponent]
+  entryComponents: [DynamicFormComponent],
+  providers:[
+    {
+      provide:FoodService,useClass:FoodService
+    },
+    {provide:API_TOKEN,useValue:'/api/pizzas'},
+    {provide:USER_TOKEN,useValue:{
+      name:"apurba",
+      "emial":'apurbahasam1994'
+    }},
+    {
+      provide :FoodService,useFactory:(api_token:string,user_token:string)=>{
+        return new FoodService(api_token,user_token);
+      },
+      deps:[
+        API_TOKEN,
+        USER_TOKEN
+      ]
+    }
+  ]
 
 })
 export class AppModule { }

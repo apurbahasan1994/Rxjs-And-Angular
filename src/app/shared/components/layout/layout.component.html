@@ -1,0 +1,39 @@
+<mat-drawer-container [class.drawer-opened]="drawer.opened" class="example-container">
+    <mat-drawer #drawer class="drawer" mode="side" opened="true">
+
+        <mat-toolbar class="header">
+            <div></div>
+            <mat-icon class="close" (click)="drawer.close()">close</mat-icon>
+        </mat-toolbar>
+        <div class="contents" style="margin-top: 40px;">
+            <div
+                style="margin-bottom: 30px;text-align:center;font-weight: 600;font-size: 20px;border-bottom: 1px solid black;padding: 20px;">
+                {{label}}
+            </div>
+            <ul style="display: flex;flex-direction:column;gap:10px">
+                <li routerLinkActive="router-link-active" *ngFor="let route of routes" class="link"
+                    [routerLink]=[route?.link]><a>{{route?.label}}</a></li>
+            </ul>
+
+        </div>
+    </mat-drawer>
+    <div>
+        <mat-toolbar color="primary" style="padding: 15px;background-color: blueviolet;position: fixed;">
+            <button (click)="drawer.toggle()" mat-icon-button class="example-icon"
+                aria-label="Example icon-button with menu icon">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span class="example-spacer"></span>
+        </mat-toolbar>
+        <div class="main contents">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+
+
+
+
+    <mat-toolbar class="main footer">
+
+    </mat-toolbar>
+</mat-drawer-container>

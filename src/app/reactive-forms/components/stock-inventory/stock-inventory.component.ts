@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormArray } from '@angular/forms';
+import { FormControl, FormGroup, FormArray, Validators, AbstractControl } from '@angular/forms';
 import { Product } from '../../models/product.interface';
+import { StockValidators } from '../../validators/stock-validator';
 @Component({
   selector: 'app-stock-inventory',
   templateUrl: './stock-inventory.component.html',
@@ -24,16 +25,32 @@ export class StockInventoryComponent implements OnInit {
   total=0;
   form = new FormGroup({
     store: new FormGroup({
-      branch: new FormControl(''),
-      code: new FormControl('')
+      branch: new FormControl('',[Validators.required,StockValidators.checkBranch],[this.validateBranch]),
+      code: new FormControl('',[Validators.required])
     }),
     selector: new FormGroup({
       product_id: new FormControl(''),
       quantity: new FormControl(10)
     }),
     stock: new FormArray([])
-  });
+  },{validators:StockValidators.checkStockEists});
   constructor() { }
+
+  async validateBranch(control:AbstractControl){
+    const promise =await new Promise((resolve,reject)=>{
+      setTimeout(() => {
+        if(control.value.length<5){
+          resolve(true);
+        }
+      }, 5000);
+    });
+    console.log(promise)
+    if(promise){
+      return {notMoreThanFive:true};
+    }
+    return null;
+
+  }
 
   ngOnInit(): void {
     this.form.get('stock')?.valueChanges.subscribe(data=>{

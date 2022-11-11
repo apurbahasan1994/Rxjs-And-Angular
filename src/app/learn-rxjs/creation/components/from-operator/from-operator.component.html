@@ -1,0 +1,25 @@
+<div style="display: flex;flex-direction: column;gap:12px">
+    <h1 class="text-bold">Form Operator</h1>
+    <p class="text-read">Converts js array, dom event handlers and promises to RXJS observables</p>
+
+    <div>
+        <mat-button-toggle-group  [value]="selectedValue" name="fontStyle" aria-label="Font Style" (change)="onChangeView($event)">
+            <mat-button-toggle value="array">Array</mat-button-toggle>
+            <mat-button-toggle value="promise">Promise</mat-button-toggle>
+            <mat-button-toggle value="event">Event Handler</mat-button-toggle>
+          </mat-button-toggle-group>
+    </div>
+    <div *ngIf="selectedValue==='array'">
+        <p class="text-primary" style="margin-bottom: 15px;">From js array : </p>
+        <img src="assets/images/from/from_js_array.png">
+    </div>
+    <div *ngIf="selectedValue==='promise'">
+        <p class="text-primary" style="margin-bottom: 15px;">From js promise : </p>
+        <img src="assets/images/from/from_promise.png">
+    </div>
+    <div *ngIf="selectedValue==='event'">
+        <p class="text-primary" style="margin-bottom: 15px;">From js event : </p>
+        <button #btn style="display:block;margin-bottom:20px">Click Me</button>
+        <img src="assets/images/from/from_event.png">
+    </div>
+</div>

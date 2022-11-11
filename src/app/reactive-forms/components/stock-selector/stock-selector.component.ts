@@ -15,7 +15,10 @@ export class StockSelectorComponent implements OnInit {
   ngOnInit(): void {
   }
   addStock(){
-    console.log('stock')
+    debugger
+    if(this.parent.invalid){
+      return;
+    }
     this.onStockAdd.emit(this.parent.get('selector')?.value);
    this.parent.get('selector')?.reset({
     product_id:'',

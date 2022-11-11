@@ -5,7 +5,13 @@
       <option *ngFor="let product of products" [value]="product.id">{{product.name}}
       </option>
     </select>
-    <input formControlName="quantity" type="number" step="10" min="10" max="1000">
+    <!-- <input formControlName="quantity" type="number" step="10" min="10" max="1000"> -->
+    <app-stock-counter formControlName="quantity" [step]="10" [min]="10" [max]="1000">
+
+    </app-stock-counter>
     <button (click)="addStock()">Add Stock</button>
+    <div *ngIf="parent.hasError('stocExists')">
+      Item already in the stock
+    </div>
   </div>
 </div>

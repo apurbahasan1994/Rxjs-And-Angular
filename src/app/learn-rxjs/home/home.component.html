@@ -1,0 +1,23 @@
+<div style="display: flex;flex-direction: column;gap:12px">
+    <h1 class="text-bold">What is Rxjs?</h1>
+    <p class="text-read">RxJS is a library for composing asynchronous and event-based programs by using observable sequences. It provides one core type, the Observable, satellite types (Observer, Schedulers, Subjects) and operators inspired by Array methods (map, filter, reduce, every, etc) to allow handling asynchronous events as collections.</p>
+
+    <div style="display: flex;flex-direction: column;gap:20px">
+        <P class="text-read font-18">The essential concepts in RxJS which solve async event management are:</P>
+        <ul style="display: flex;flex-direction: column;gap:12px">
+            <li class="li"><span class="text-primary">Observable:</span> represents the idea of an invokable collection of future values or events.</li>
+            <li class="li"><span class="text-primary">Observer:</span> is a collection of callbacks that knows how to listen to values delivered by the Observable.</li>
+            <li class="li"><span class="text-primary">Subscription:</span> represents the execution of an Observable, is primarily useful for cancelling the execution.</li>
+            <li class="li"><span class="text-primary">Operators:</span> are pure functions that enable a functional programming style of dealing with collections with operations like map, filter, concat, reduce, etc.</li>
+            <li class="li"><span class="text-primary">Subject:</span> is equivalent to an EventEmitter, and the only way of multicasting a value or event to multiple Observers.</li>
+            <li class="li"><span class="text-primary">Schedulers:</span> are centralized dispatchers to control concurrency, allowing us to coordinate when computation happens on e.g. setTimeout or requestAnimationFrame or others.</li>
+        </ul>
+    </div>
+    <div style="display: flex;flex-direction: column;gap:20px">
+        <P class="text-read font-18">Rxjs Operators Category :</P>
+       <ul style="display: flex;flex-direction: column;gap:12px">
+        <li routerLink="creation"><a>Creation</a></li>
+        <li routerLink="pipeable"><a>Pipeable</a></li>
+       </ul>
+    </div>
+</div>
