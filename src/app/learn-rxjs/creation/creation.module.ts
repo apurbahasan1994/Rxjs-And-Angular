@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { GenerateComponent } from './components/generate/generate.component';
 
 const ROUTES:Routes=[
   {
@@ -14,6 +15,9 @@ const ROUTES:Routes=[
   {path:'',children:[
     {
       path:'from',component:FromOperatorComponent
+    },
+    {
+      path:'generate',component:GenerateComponent
     }
   ]}
 ]
@@ -21,7 +25,8 @@ const ROUTES:Routes=[
 @NgModule({
   declarations: [
     HomeComponent,
-    FromOperatorComponent
+    FromOperatorComponent,
+    GenerateComponent
   ],
   imports: [
     CommonModule,
