@@ -1,0 +1,18 @@
+<div style="display: flex;flex-direction: column;gap:12px;margin-top: 100px;">
+    <h1 class="text-bold">Zip Operator</h1>
+    <p class="text-read">
+       Combines multiple observables to create an observable whose values are calculated from the values, in order, of each of its input observables
+    </p>
+
+    <p>Ziping the api calls </p>
+    <ul>
+        <li *ngFor="let val of source$|async">{{val}}</li>
+    </ul>
+
+    <div style="width: 400px;display: flex; gap: 20px;">
+        <img src="assets/images/zip.png" style="object-fit:cover;width: 100%;height: 100%;">
+
+    </div>
+
+
+</div>

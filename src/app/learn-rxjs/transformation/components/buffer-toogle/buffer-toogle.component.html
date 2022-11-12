@@ -1,0 +1,24 @@
+<div style="display: flex;flex-direction: column;gap:12px;margin-top: 100px;">
+    <h1 class="text-bold">Buffer Toogle Operator</h1>
+    <p class="text-read">
+      Buffers the source observable values starting from an emission from openings and ending when the output of closing selector emits
+    </p>
+
+    <p class="text-read">
+        Params: (openings,closingSelector)
+    </p>
+    <p class="text-read"> openings :A subscriber or promise of notifications to start new buffers.</p>
+    <p class="text-read"> closingSelector: A function that takes the value emitted by the openings observable and returns a subscrible or promise, which whe nit emits signals that the associated buffer 
+        should be emitted and cleared.
+    </p>
+    <ul>
+        <li *ngFor="let val of source$|async">{{val}}</li>
+    </ul>
+
+    <div style="width: 400px;display: flex; gap: 20px;">
+        <img src="assets/images/buffer_toogle.png" style="object-fit:cover;width: 100%;height: 100%;">
+
+    </div>
+
+
+</div>

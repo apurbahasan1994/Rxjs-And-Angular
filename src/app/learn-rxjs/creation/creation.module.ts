@@ -7,6 +7,9 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { GenerateComponent } from './components/generate/generate.component';
+import { ToarrayComponent } from './components/toarray/toarray.component';
+import { TimerComponent } from './components/timer/timer.component';
+import { DeferComponent } from './components/defer/defer.component';
 
 const ROUTES:Routes=[
   {
@@ -18,6 +21,15 @@ const ROUTES:Routes=[
     },
     {
       path:'generate',component:GenerateComponent
+    },
+    {
+      path:'to-array',component:ToarrayComponent
+    },
+    {
+      path:'timer',component:TimerComponent
+    },
+    {
+      path:'defer',component:DeferComponent
     }
   ]}
 ]
@@ -26,7 +38,9 @@ const ROUTES:Routes=[
   declarations: [
     HomeComponent,
     FromOperatorComponent,
-    GenerateComponent
+    GenerateComponent,
+    ToarrayComponent,
+    DeferComponent
   ],
   imports: [
     CommonModule,

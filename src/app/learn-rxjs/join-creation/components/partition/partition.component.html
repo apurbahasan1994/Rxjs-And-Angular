@@ -1,0 +1,28 @@
+<div style="display: flex;flex-direction: column;gap:12px;margin-top: 100px;">
+    <h1 class="text-bold">Partition Operator</h1>
+    <p class="text-read">
+       Splits the source observable into two one with values that satisfy a predicate and another with values that dont 
+       satisfy the predicate.
+    </p>
+
+    <p class="text-read">
+        Its like filter, but returns two observables: one like the output of filter,
+        and other values that did not pass the condition
+        
+    </p>
+    <p>Values that satisfy the condition</p>
+    <ul>
+        <li *ngFor="let val of source1$|async">{{val}}</li>
+    </ul>
+    <p>Values that did not satisfy the condition</p>
+    <ul>
+        <li *ngFor="let val of source2$|async">{{val}}</li>
+    </ul>
+
+    <div style="width: 400px;height:300px;display: flex; gap: 20px;">
+        <img src="assets/images/partition.png" style="object-fit:cover;width: 100%;">
+
+    </div>
+
+
+</div>

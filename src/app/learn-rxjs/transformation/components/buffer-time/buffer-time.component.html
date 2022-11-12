@@ -1,0 +1,29 @@
+<div style="display: flex;flex-direction: column;gap:12px;margin-top: 100px;">
+    <h1 class="text-bold">BufferTime Operator</h1>
+    <p class="text-read">
+        Collects values from the past as an array, and emits that array only when another observable emits
+    </p>
+    <p class="text-read">
+        Use Case: is often used when the batching technique is required. For example, sometimes you need to repeatedly
+        perform a very expensive operation within a very small time frame, such as re-rendering a DOM tree on updates
+        from a stream, batching can help collect updates and render them at once.
+    </p>
+    <p class="text-read">
+        Params: (bufferTimeSpan: number, bufferCreationInterval: number)
+    </p>
+    <p class="text-read"> bufferSize : After that many time after the emission will be start.</p>
+    <p class="text-read">startBufferEvery: Will create new buffer after passing that many time.</p>
+   
+    
+
+    <ul>
+        <li *ngFor="let val of source$|async">{{val}}</li>
+    </ul>
+
+    <div style="width: 400px;display: flex; gap: 20px;">
+        <img src="assets/images/buffer_time.png" style="object-fit:cover;width: 100%;height: 100%;">
+
+    </div>
+
+
+</div>

@@ -1,0 +1,14 @@
+<div style="display: flex;flex-direction: column;gap:12px;margin-top: 100px;">
+    <h1 class="text-bold">ToArray Operator</h1>
+    <p class="text-read">Collects all source emissions and emits them as an array when the source completes</p>
+    <button mat-raised-button color="primary" style="width: 200px;" (click)="generateValue()">Click to show generate
+        value</button>
+        <div style="width: 400px;height:300px;display: flex; gap: 20px;">
+            <img src="assets/images/generate.png" style="object-fit:cover;width: 100%;">
+            <ul style="display: flex;flex-direction: column;gap:12px;padding-left: 20px;">
+                <li class="li li--route"  *ngFor="let data of source$|async">{{data}}</li>
+            </ul>
+        </div>
+   
+
+</div>

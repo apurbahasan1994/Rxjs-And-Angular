@@ -1,0 +1,16 @@
+<div style="display: flex;flex-direction: column;gap:12px;margin-top: 100px;">
+    <h1 class="text-bold">MapTo Operator</h1>
+    <p class="text-read">
+       Emits the given constant value on the output observable everytime the source observable emits a value.
+    </p>
+    <ul>
+        <li *ngFor="let val of source|async">{{val}}</li>
+    </ul>
+
+    <div style="width: 400px;display: flex; gap: 20px;">
+        <img src="assets/images/map_to.png" style="object-fit:cover;width: 100%;height: 100%;">
+
+    </div>
+
+
+</div>
